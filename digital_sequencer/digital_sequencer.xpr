@@ -87,139 +87,102 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/FrontPanel/okCoreHarness.v">
+      <File Path="$PPRDIR/FrontPanel/okCoreHarness.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/FrontPanel/okCoreHarness.v"/>
-          <Attr Name="ImportTime" Val="1643842409"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/FrontPanel/okPipeIn.v">
+      <File Path="$PPRDIR/FrontPanel/okPipeIn.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/FrontPanel/okPipeIn.v"/>
-          <Attr Name="ImportTime" Val="1643842409"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/FrontPanel/okTriggerOut.v">
+      <File Path="$PPRDIR/FrontPanel/okTriggerOut.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/FrontPanel/okTriggerOut.v"/>
-          <Attr Name="ImportTime" Val="1643842409"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/FrontPanel/okWireIn.v">
+      <File Path="$PPRDIR/FrontPanel/okWireIn.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/FrontPanel/okWireIn.v"/>
-          <Attr Name="ImportTime" Val="1643842409"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/FrontPanel/okLibrary.vhd">
+      <File Path="$PPRDIR/FrontPanel/okLibrary.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/FrontPanel/okLibrary.vhd"/>
-          <Attr Name="ImportTime" Val="1650669145"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/ram.vhd">
+      <File Path="$PPRDIR/ram.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/ram.vhd"/>
-          <Attr Name="ImportTime" Val="1523571376"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/digital_sequencer.vhd">
+      <File Path="$PPRDIR/digital_sequencer.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/digital_sequencer.vhd"/>
-          <Attr Name="ImportTime" Val="1650668618"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/FrontPanel/okLibrary.v">
+      <File Path="$PPRDIR/block_ram.ngc">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/FrontPanel/okLibrary.v"/>
-          <Attr Name="ImportTime" Val="1643842409"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/FrontPanel/okLibrary.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/FrontPanel/okBTPipeOut.v">
+      <File Path="$PPRDIR/FrontPanel/okBTPipeOut.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/FrontPanel/okBTPipeOut.v"/>
-          <Attr Name="ImportTime" Val="1643842409"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/FrontPanel/okWireOut.v">
+      <File Path="$PPRDIR/FrontPanel/okPipeOut.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/FrontPanel/okWireOut.v"/>
-          <Attr Name="ImportTime" Val="1643842409"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/Counters.vhd">
+      <File Path="$PPRDIR/FrontPanel/okTriggerIn.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/Counters.vhd"/>
-          <Attr Name="ImportTime" Val="1643842409"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/FrontPanel/okBTPipeIn.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/FrontPanel/okBTPipeIn.v"/>
-          <Attr Name="ImportTime" Val="1643842409"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/block_ram.ngc">
+      <File Path="$PPRDIR/FrontPanel/okBTPipeIn.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/block_ram.ngc"/>
-          <Attr Name="ImportTime" Val="1523571376"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/FrontPanel/okTriggerIn.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/FrontPanel/okTriggerIn.v"/>
-          <Attr Name="ImportTime" Val="1643842409"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/digital_sequencer/FrontPanel/okPipeOut.v">
+      <File Path="$PPRDIR/FrontPanel/okWireOut.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/FrontPanel/okPipeOut.v"/>
-          <Attr Name="ImportTime" Val="1643842409"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -233,10 +196,8 @@
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
       <Filter Type="Constrs"/>
-      <File Path="$PSRCDIR/constrs_1/imports/digital_sequencer/xem7001.xdc">
+      <File Path="$PPRDIR/xem7001.xdc">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../digital_sequencer/xem7001.xdc"/>
-          <Attr Name="ImportTime" Val="1650903758"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
@@ -246,6 +207,7 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1" RelGenDir="$PGENDIR/sim_1">
+      <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="digital_sequencer"/>
@@ -300,9 +262,7 @@
   <Runs Version="1" Minor="15">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a15tftg256-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" IncrementalCheckpoint="$PSRCDIR/utils_1/imports/synth_1/digital_sequencer.dcp" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -312,9 +272,7 @@
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a15tftg256-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

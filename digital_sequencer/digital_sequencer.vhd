@@ -20,7 +20,7 @@ entity digital_sequencer is
         -- external trigger --
         trigger : in std_logic;
         -- sequence out --
-        logic_out : out std_logic_vector(63 downto 0) := (others => '0')
+        logic_out : inout std_logic_vector(63 downto 0) := (others => '0')
 	);
 end digital_sequencer;
 
@@ -104,6 +104,7 @@ ep60trig <= ("000000000000000" & sequence_finished);
 --        end if;
 --    end process;
     
+	--make 50 MHz clk
     process (clk_100) is 
     begin 
         if rising_edge(clk_100) then
@@ -117,7 +118,7 @@ ep60trig <= ("000000000000000" & sequence_finished);
         if rising_edge(clk_100) then --trigger state change on clk
             if ep00wire(1 downto 0) = "00" then
                 state <= idle;
-            elsif ep00wire(1 downto 0) = "01" then
+            elsif ep00wire(1 downto 0) = "01" or ep00wire(1 downto 0) = "11" then
                 state <= load;
             elsif ep00wire(1 downto 0) = "10" then
                 state <= run;
@@ -128,7 +129,7 @@ ep60trig <= ("000000000000000" & sequence_finished);
     --control ram_data_i, ram_we
     process (clk, state, ep80write, ep80pipe) is
     begin
-        if falling_edge(clk) then
+        if rising_edge(clk) then
             case (state) is
                 when load => --load data from ep80pipe (USB) into ram
                     if ep80write = '1' then 
@@ -148,24 +149,39 @@ ep60trig <= ("000000000000000" & sequence_finished);
         variable armed : std_logic := '0';
         variable waiting_trigger : std_logic := '0';
         variable read_ticks : integer;
+        variable led_run : std_logic := '0';
+        variable led_idle : std_logic := '0';
+        variable led_load : std_logic := '0';
     begin
-        if falling_edge(clk) then
+        if rising_edge(clk) then
             -- led(7 downto 0) <= not sequence_logic(63 downto 56);
             --led <= not (sequence_finished & "000000" & trigger);
 --            led <= not conv_std_logic_vector(ticks_til_update, 8);
-            led <= not (trigger & "00000" & waiting_trigger & armed);
+           -- led <= not (trigger & "00000" & waiting_trigger & armed);
+            led <= not (trigger & sequence_finished & waiting_trigger & armed & "0" & led_run & led_load & led_idle);
             case(state) is
                 when load => -- get ready to run, output defaults
+					ticks_til_update <= 10; 
                     sequence_finished <= '0';
+                    sequence_count <= 0;
+					led_run  := '0';
+					led_idle := '0';
+					led_load := '1';
                 when idle => -- get ready to run, output defaults
                     ticks_til_update <= 100; 
                     sequence_count <= 0;
                     sequence_finished <= '0';
+					led_run  := '0';
+					led_idle := '1';
+					led_load := '0';
                 when run => 
+					led_run  := '1';
+					led_idle := '0';
+					led_load := '0';
                     if ticks_til_update < 0 then -- something changes, we are adding 10 ns at each switch
                         read_ticks := conv_integer(read_logic(95 downto 64));
                         if read_ticks = 0 then -- the sequence is done. start over
-                            sequence_finished <= '1';
+                            sequence_finished <= '1';        
                         elsif read_ticks = 2**31 - 1 then
                             waiting_trigger := '1';
                             sequence_logic <= read_logic(63 downto 0);
@@ -198,18 +214,22 @@ ep60trig <= ("000000000000000" & sequence_finished);
     end process;
 
     -- control ram_addr
-    process (clk, state, ep80write) is
+    process (clk, state, ep80write, ram_we) is
     begin
-        if rising_edge(clk) then
+        if falling_edge(clk) then
             case (state) is
                 when load => 
-                    if ep80write = '1' then -- advance ram_addr every time we write to the ram
+                    if ram_we = '1' then -- advance ram_addr every time we write to the ram
                         ram_addr <= ram_addr + 1;
                     end if;
                 when run => 
-                    if ticks_til_update < 7 then -- read backwards. two timing words, then four logic words.
-                        ram_addr <= sequence_count*6 + ticks_til_update-1;
-                    else ram_addr <= (sequence_count)*6+5;
+                    if sequence_finished = '0' then
+						if ticks_til_update < 7 then -- read backwards. two timing words, then four logic words.
+							ram_addr <= sequence_count*6 + ticks_til_update-1;
+						else ram_addr <= (sequence_count)*6+5;
+						end if;
+                    else --sequence_finished is 1
+						ram_addr <= 0;
                     end if;
                 when others =>
                     ram_addr <= 0;
